@@ -215,5 +215,3 @@ DeepGenModels_HW1/
 │── report/                 # Final report and derivations
 │── submission/             # Packaged submission files
 ```
-
-This structure improves organization and makes the repository easy to navigate and maintain. Let me know if you need further refinements.
