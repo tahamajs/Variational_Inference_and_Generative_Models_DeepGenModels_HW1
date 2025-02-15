@@ -1,196 +1,219 @@
-# ELBO_KL_Bayesian_VAE_PGM_HW1
 
-# Deep Generative Models - Homework 1
 
-## 📌 Table of Contents
+# **Deep Generative Models - Homework 1**
 
-- [Introduction](#introduction)
-- [Course Information](#course-information)
-- [Assignment Details](#assignment-details)
-- [Sections Overview](#sections-overview)
-  - [PGM (Probabilistic Graphical Models)](#pgm-probabilistic-graphical-models)
-  - [VAE (Variational Autoencoders)](#vae-variational-autoencoders)
-- [Implementation Details](#implementation-details)
-- [Mathematical Derivations](#mathematical-derivations)
-- [Training and Experimentation](#training-and-experimentation)
-- [Submission Guidelines](#submission-guidelines)
-- [Academic Integrity Policy](#academic-integrity-policy)
-- [License](#license)
+**University of Tehran** | **Department of Electrical and Computer Engineering**
+
+ **Course** : Deep Generative Models |  **Instructor** : Dr. Mostafa Tavasoli |  **Term** : Fall 1403
+
+ **Author** : *Taha Majlesi*
+
+ **Email** : [taha.maj4@gmail.com](mailto:taha.maj4@gmail.com) | [tahamajlesi@ut.ac.ir](mailto:tahamajlesi@ut.ac.ir)
+
+ **Profiles** : [LinkedIn](https://www.linkedin.com/in/tahamajlesi/) | [GitHub](https://github.com/tahamajs) | [Hugging Face](https://huggingface.co/tahamajs/plamma)
 
 ---
 
-## 📝 Introduction
+## **Table of Contents**
 
-This repository contains **Homework 1** for the **Deep Generative Models** course at the **University of Tehran**. The homework consists of **theoretical and practical problems** in **probabilistic graphical models (PGMs)** and **variational autoencoders (VAEs)**. The goal is to:
-
-- Develop a strong mathematical understanding of **Bayesian Networks**, **Markov Networks**, and **inference techniques**.
-- Implement and train **Variational Autoencoders (VAEs)** using deep learning frameworks.
-- Explore **latent space properties**, **disentanglement**, and **factorized representations**.
-
-By completing this assignment, students will gain **both theoretical and practical knowledge** necessary for working with **deep generative models**.
-
----
-
-## 🎓 Course Information
-
-- **University**: University of Tehran
-- **Department**: Electrical and Computer Engineering
-- **Course**: Deep Generative Models
-- **Instructor**: Dr. Mostafa Tavasoli
-- **Term**: Fall 1403
+* [Introduction](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#introduction)
+* [Course Information](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#course-information)
+* [Assignment Details](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#assignment-details)
+* [Sections Overview](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#sections-overview)
+  * [Probabilistic Graphical Models (PGM)](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#probabilistic-graphical-models-pgm)
+  * [Variational Autoencoders (VAE)](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#variational-autoencoders-vae)
+* [Implementation Details](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#implementation-details)
+* [Mathematical Derivations](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#mathematical-derivations)
+* [Training and Experimentation](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#training-and-experimentation)
+* [Results and Analysis](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#results-and-analysis)
+* [Submission Guidelines](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#submission-guidelines)
+* [License](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#license)
+* [Project Structure](https://chatgpt.com/c/67b0eae8-c268-8007-9df3-33d28ab21913#project-structure)
 
 ---
 
-## 🏆 Assignment Details
+## **Introduction**
 
-This assignment is **divided into two main sections**:
+This repository contains Homework 1 for the Deep Generative Models course at the University of Tehran. The assignment includes both theoretical derivations and practical implementations in:
 
-### 🔹 **1. Probabilistic Graphical Models (PGM)**:
+* Probabilistic Graphical Models (PGMs): Bayesian Networks, Markov Networks, and inference techniques.
+* Variational Autoencoders (VAEs): ELBO, KL Divergence, reparameterization, and deep generative modeling.
 
-- Understanding and constructing **Bayesian Networks** and **Markov Networks**.
-- Deriving **conditional independence properties** and factorized probability distributions.
-- Implementing **variational inference** for a Bayesian Network.
-
-### 🔹 **2. Variational Autoencoders (VAE)**:
-
-- **Theoretical Derivations**: Understanding ELBO, KL Divergence, and reparameterization.
-- **Implementation**: Coding a **VAE model** using **deep learning frameworks**.
-- **Experiments**: Training a VAE, visualizing the latent space, and analyzing disentanglement.
+The goal is to build a solid theoretical foundation and gain hands-on experience with deep generative models.
 
 ---
 
-## 📂 Sections Overview
+## **Course Information**
 
-### 🔥 **PGM (Probabilistic Graphical Models)**
-
-Probabilistic Graphical Models (PGMs) are **powerful tools** for modeling complex probability distributions using graphs.
-
-#### ✅ **Tasks:**
-
-1. **Bayesian Network for Server Monitoring**:
-
-   - Define a Bayesian Network for a **server monitoring system** where temperature, air conditioning failure, and open doors affect server behavior.
-   - Construct a **directed acyclic graph (DAG)** for this problem.
-   - Compute the **joint probability distribution**.
-2. **Independence Properties**:
-
-   - Verify **conditional independence statements** using d-separation properties.
-3. **Markov Network Analysis**:
-
-   - Analyze a **Markov network**, verify independence properties, and factorize distributions.
-4. **Variational Inference**:
-
-   - Implement **variational inference** to estimate posterior distributions.
+* **University** : University of Tehran
+* **Department** : Electrical and Computer Engineering
+* **Course** : Deep Generative Models
+* **Instructor** : Dr. Mostafa Tavasoli
+* **Term** : Fall 1403
 
 ---
 
-### 🔥 **VAE (Variational Autoencoders)**
+## **Assignment Details**
 
-Variational Autoencoders (VAEs) are generative models that **learn probabilistic latent space representations**.
+The assignment is divided into two sections:
 
-#### ✅ **Tasks:**
+### **1. Probabilistic Graphical Models (PGM)**
 
-1. **ELBO Derivation**:
+* Constructing Bayesian Networks and Markov Networks.
+* Deriving conditional independence properties.
+* Implementing variational inference for Bayesian Networks.
 
-   - Prove the **Evidence Lower Bound (ELBO)** equation.
-   - Show how **KL divergence** regularizes latent space.
-2. **Reparameterization Trick**:
+### **2. Variational Autoencoders (VAE)**
 
-   - Implement the **Reparameterization Trick** to enable gradient-based optimization.
-3. **Building the VAE Model**:
-
-   - Implement an **Encoder-Decoder structure**.
-   - Use **convolutional layers** for feature extraction.
-4. **Training and Experimentation**:
-
-   - Train the VAE on an **image dataset**.
-   - Evaluate the model using **reconstruction loss and KL divergence**.
-   - Visualize the latent space and generate **new images**.
-5. **β-VAE and Disentanglement**:
-
-   - Implement **β-VAE** to study **factorized latent representations**.
-   - Experiment with modifying latent variables to control image attributes.
+* Theoretical Derivations: ELBO, KL Divergence, reparameterization.
+* Implementation: Building and training a VAE.
+* Experiments: Latent space visualization, disentanglement, and β-VAE.
 
 ---
 
-## ⚙️ Implementation Details
+## **Sections Overview**
 
-### **🔹 Dataset**
+### **Probabilistic Graphical Models (PGM)**
 
-- The dataset contains **face images**.
-- **Training/Test split**: **80/20**.
-- **Preprocessing**:
-  - Convert images to grayscale (if required).
-  - Resize images to **128x128**.
-  - Normalize pixel values to `[0,1]`.
+* Bayesian Networks: Construct a DAG for a server monitoring system and compute joint probability distributions.
+* Conditional Independence: Use d-separation to verify independence properties.
+* Markov Networks: Analyze and factorize a given Markov network.
+* Variational Inference: Implement a Bayesian inference technique.
 
-### **🔹 Model Architecture**
+### **Variational Autoencoders (VAE)**
 
-The **VAE architecture** consists of:
+* ELBO Derivation: Prove the Evidence Lower Bound (ELBO).
+* KL Divergence: Show its role in regularizing latent space.
+* Reparameterization Trick: Enable gradient-based optimization.
+* VAE Implementation: Encoder-Decoder structure with CNN layers.
+* Training and Experimentation: Evaluate reconstruction loss, KL divergence, and latent space visualization.
+* β-VAE and Disentanglement: Modify β to analyze factorized latent representations.
+
+---
+
+## **Implementation Details**
+
+### **Dataset**
+
+* Face Image Dataset (preprocessed for training).
+* Train/Test Split: 80/20.
+* Preprocessing:
+  * Convert to grayscale (if needed).
+  * Resize to 128×128.
+  * Normalize pixel values to `[0,1]`.
+
+### **Model Architecture**
 
 | Component         | Layers Used                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | **Encoder** | Conv2D (ReLU) → Conv2D → Flatten → Dense (Latent Space)   |
 | **Decoder** | Dense → Reshape → Conv2D Transpose (ReLU) → Conv2D Output |
 
-### **🔹 Training Parameters**
+### **Training Parameters**
 
-| Parameter     | Value      |
-| ------------- | ---------- |
-| Image Size    | (128, 128) |
-| Batch Size    | 128        |
-| Optimizer     | Adam       |
-| Learning Rate | 0.0005     |
-| Epochs        | 1000       |
+| Parameter               | Value     |
+| ----------------------- | --------- |
+| **Image Size**    | (128,128) |
+| **Batch Size**    | 128       |
+| **Optimizer**     | Adam      |
+| **Learning Rate** | 0.0005    |
+| **Epochs**        | 1000      |
 
-### **🔹 Loss Function**
+### **Loss Function**
 
-- **ELBO Loss**: Combination of **Reconstruction Loss** and **KL Divergence**.
-- **β-VAE Loss**: Adds a weight term `β` to KL Divergence for disentanglement.
+* ELBO Loss: Combination of Reconstruction Loss and KL Divergence.
+* β-VAE Loss: Adds a weight term `β` to KL divergence for better disentanglement.
 
 ---
 
-## 📊 Mathematical Derivations
+## **Mathematical Derivations**
 
-### **1️⃣ ELBO Derivation**
+### **1. ELBO Derivation**
 
-The **ELBO (Evidence Lower Bound)** is derived from **Bayes' Theorem**:
-
-\$$logp(x)=E
+The ELBO (Evidence Lower Bound) is derived from Bayes' Theorem:
 
 $$
-
-
+\log p(x) = \mathbb{E}_{q(z|x)} \left[ \log p(x|z) \right] - D_{KL} \left( q(z|x) \| p(z) \right)
 $$
 
+**2. Reparameterization Trick**
+
+Sampling from q(z∣x) is non-differentiable, so we use:
+
 $$
-
-
-$$
-
-**2️⃣ Reparameterization Trick**
-
-Since sampling from \( q(z|x) \) is **non-differentiable**, we use:
-
-\[
 z = \mu + \sigma \cdot \epsilon, \quad \text{where } \epsilon \sim \mathcal{N}(0,1)
-\]
+$$
 
-This enables **gradient-based training**.
-
----
-
-## 🚀 Training and Experimentation
-
-1. **Train the VAE model** for **1000 epochs**.
-2. **Monitor ELBO loss** and plot the **KL divergence** during training.
-3. **Visualize latent space** using **interpolations**.
-4. **Modify latent vectors** to control **face attributes**.
+This enables gradient-based training.
 
 ---
 
-### **📜 Required Files**
+## **Training and Experimentation**
 
-1. **Report**: Must include **theoretical answers, derivations, and analysis**.
-2. **Code**: Fully executable **Python scripts**.
-3. **Submission Format**:
+1. Train the VAE for 1000 epochs.
+2. Monitor ELBO loss and KL divergence during training.
+3. Visualize latent space using interpolations.
+4. Modify latent vectors to control face attributes.
+
+---
+
+## **Results and Analysis**
+
+* Loss Curves: Track ELBO, Reconstruction Loss, and KL Divergence.
+* Latent Space Analysis: Visualize interpolation between latent vectors.
+* Disentanglement Study: Modify β-VAE parameters for better latent separation.
+* Generated Images: Show example outputs.
+
+---
+
+## **Submission Guidelines**
+
+1. **Report** : Submit a well-structured PDF including:
+
+* Theoretical answers
+* Mathematical derivations
+* Experimental results
+
+1. **Code** :
+
+* Provide fully executable Python scripts.
+* Use Jupyter notebooks for analysis and visualization.
+
+1. **Submission Format** :
+
+* Upload the project to GitHub.
+* Provide a clear README.md.
+* Ensure the code runs without errors.
+
+---
+
+## **License**
+
+This project is licensed under the MIT License.
+
+For more details, see the [LICENSE](https://chatgpt.com/c/LICENSE) file.
+
+---
+
+## **Project Structure**
+
+```
+DeepGenModels_HW1/
+│── README.md               # Overview of the repository
+│── LICENSE                 # License file
+│── .gitignore              # Files to ignore in Git tracking
+│── requirements.txt        # Dependencies list
+│── data/                   # Dataset (or links to download)
+│── src/                    # Source code for models
+│    ├── model.py           # VAE implementation
+│    ├── train.py           # Training script
+│    ├── inference.py       # Generating new samples
+│    ├── utils.py           # Helper functions
+│── notebooks/              # Jupyter notebooks for analysis
+│── results/                # Training logs, images, plots
+│── docs/                   # Additional documentation
+│── report/                 # Final report and derivations
+│── submission/             # Packaged submission files
+```
+
+This structure improves organization and makes the repository easy to navigate and maintain. Let me know if you need further refinements.
